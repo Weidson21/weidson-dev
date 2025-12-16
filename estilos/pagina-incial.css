@@ -83,9 +83,9 @@ header h1 {
 nav {
   position: absolute;
   top: 98%;
-  left: 250px;
+  left: 214px;
   width: 130px;
-  background-color: gray;
+  background-color: var(--border);
   border-bottom: 1px solid var(--border);
   display: none;
 }
@@ -100,6 +100,11 @@ nav ul {
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem;
+}
+
+nav li:hover{
+  color: var(--primary);
+  font-weight: bold;
 }
 
 nav a {
