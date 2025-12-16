@@ -54,6 +54,7 @@ header h1 {
   justify-content: space-between;
   cursor: pointer;
   z-index: 100;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .hamburguer span {
@@ -112,6 +113,7 @@ nav a {
   font-size: 1.1rem;
   font-weight: 500;
   color: var(--text);
+  -webkit-tap-highlight-color: transparent;
 }
 
 nav a:hover {
