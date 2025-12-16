@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/orcamento.css">
+    <title>Solicitar Orçamento</title>
+</head>
+<body>
+    <main>
+        <section>
+            <!--Barra de progresso-->
+            <div class="progress-container">
+                <div class="progress-line"></div>
+
+                <div class="progress-steps">
+                    <div class="progress-step active">1</div>
+                    <div class="progress-step">2</div>
+                    <div class="progress-step">3</div>
+                </div>
+            </div>
+            <!--Formulário-->
+            <form id="form">
+
+            <div class="form-step active">
+                <h2>Qual tipo de projeto?</h2>
+                <button type="button" class="next">Landing Page</button>
+            </div>
+
+            <div class="form-step">
+                <h2>Detalhes do projeto</h2>
+                <input type="text" placeholder="Objetivo do site">
+                <button type="button" class="back">Voltar</button>
+                <button type="button" class="next">Próximo</button>
+            </div>
+
+            <div class="form-step">
+                <h2>Seus dados</h2>
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="E-mail">
+                <button type="button" class="back">Voltar</button>
+                <button type="submit">Enviar</button>
+            </div>
+
+            </form>
+        </section>
+    </main>
+    <script src="../scripts/orcamento.js"></script>
+</body>
+</html>

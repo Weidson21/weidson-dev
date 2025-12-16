@@ -1,0 +1,207 @@
+/* =========================
+   RESET + VARIÁVEIS
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #2563EB;
+  --dark: #0F172A;
+  --bg: #F8FAFC;
+  --card: #FFFFFF;
+  --text: #1E293B;
+  --muted: #64748B;
+  --border: #E2E8F0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--dark);
+}
+
+/* =========================
+   HAMBURGUER
+========================= */
+.hamburguer {
+  width: 28px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.hamburguer span {
+  height: 3px;
+  width: 100%;
+  background-color: var(--dark);
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+/* Animação quando ativo */
+.hamburguer.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburguer.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguer.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* =========================
+   MENU
+========================= */
+nav {
+  position: absolute;
+  top: 98%;
+  left: 250px;
+  width: 130px;
+  background-color: gray;
+  border-bottom: 1px solid var(--border);
+  display: none;
+}
+
+nav.active {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.hero .btn:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   SERVIÇOS
+========================= */
+.servicos {
+  padding: 3rem 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--card);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+}
+
+/* =========================
+   DESKTOP
+========================= */
+@media (min-width: 768px) {
+  .hamburguer {
+    display: none;
+  }
+
+  nav {
+    position: static;
+    display: block;
+    border: none;
+    background: none;
+  }
+
+  nav ul {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .hero {
+    max-width: 900px;
+    margin: auto;
+    text-align: left;
+  }
+
+  .servicos {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: auto;
+  }
+}

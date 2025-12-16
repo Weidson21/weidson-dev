@@ -1,0 +1,177 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5e7eb;
+}
+
+.progress-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  height: 40px;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.progress-step {
+  width: 34px;
+  height: 34px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+  transition: 0.3s;
+}
+
+.progress-step.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* 🔹 LINHA CINZA (FUNDO) */
+.progress-container::before {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #e5e7eb;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* 🔹 LINHA AZUL (PROGRESSO) */
+.progress-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: #2563eb;
+  transform: translateY(-50%);
+  transition: width 0.4s ease;
+  z-index: 1;
+}
+/* CONTAINER */
+main {
+  width: 100%;
+  padding: 1rem;
+}
+
+section {
+  max-width: 420px;
+  margin: auto;
+}
+
+/* FORM */
+form {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* STEPS */
+.form-step {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  animation: fade 0.4s ease;
+}
+
+.form-step.active {
+  display: flex;
+}
+
+/* TÍTULOS */
+.form-step h2 {
+  font-size: 1.4rem;
+  color: #f8fafc;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #f1f5f9;
+  outline: none;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+input:focus {
+  border-color: #38bdf8;
+}
+
+/* BOTÕES */
+button {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+/* BOTÃO NEXT / SUBMIT */
+.next,
+button[type="submit"] {
+  background: #38bdf8;
+  color: #020617;
+}
+
+.next:hover,
+button[type="submit"]:hover {
+  background: #0ea5e9;
+}
+
+/* BOTÃO BACK */
+.back {
+  background: transparent;
+  border: 1px solid #334155;
+  color: #cbd5f5;
+}
+
+.back:hover {
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+
+/* ANIMAÇÃO */
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
