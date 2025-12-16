@@ -178,6 +178,24 @@ nav a:hover {
   border-color: var(--primary);
 }
 
+@media screen and (min-width: 390px){
+  nav{
+    left: 260px;
+  }
+}
+
+@media screen and (min-width: 412px){
+  nav{
+    left: 280px;
+  }
+}
+
+@media screen and (min-width: 430px){
+  nav{
+    left: 300px;
+  }
+}
+
 /* =========================
    DESKTOP
 ========================= */
